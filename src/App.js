@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect} from 'react';
 
 function App() {
+  useEffect(() => {
+    const c = setTimeout(() => {
+      document.body.classList.remove("not-loaded");
+      clearTimeout(c);
+    }, 1000);
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
